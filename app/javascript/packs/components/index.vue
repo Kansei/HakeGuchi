@@ -36,7 +36,6 @@
 
 <script>
   import axios from 'axios'
-  import func from './vue-temp/vue-editor-bridge';
 
   export default {
     data: function(){
