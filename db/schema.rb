@@ -14,16 +14,9 @@ ActiveRecord::Schema.define(version: 2019_01_21_132949) do
 
   create_table "posts", force: :cascade do |t|
     t.string "text", null: false
+    t.integer "sympathy", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "sympathies", force: :cascade do |t|
-    t.integer "post_id"
-    t.integer "count", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_sympathies_on_post_id"
   end
 
 end
