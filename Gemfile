@@ -42,6 +42,7 @@ gem 'foreman'
 gem 'jquery-rails'
 gem 'materialize-sass'
 gem 'material_icons'
+gem 'delayed_job_active_record'
 
 gem 'pg', group: :production
 
