@@ -1,7 +1,7 @@
 class DeleteExpiredPostJob < ApplicationJob
   queue_as :default
 
-  def perform(*args)
-    # Do something later
+  def perform
+    Post.delete_expired
   end
 end
