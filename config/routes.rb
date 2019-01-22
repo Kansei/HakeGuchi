@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  root to: 'home#index'
-  get '/about', to: 'home#index'
-  get '/contact', to: "home#index"
-
-  namespace :api, format: 'json' do
-    resources :tasks, only: %i(index create update)
+  namespace :api do
+    namespace :v1 do
+      resources :posts, only: %i[index create update]
+    end
   end
 end

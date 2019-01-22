@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_14_214259) do
+ActiveRecord::Schema.define(version: 2019_01_21_132949) do
 
-  create_table "tasks", force: :cascade do |t|
-    t.string "name", null: false
-    t.boolean "is_done", default: false, null: false
+  create_table "posts", force: :cascade do |t|
+    t.string "text", null: false
+    t.integer "sympathy", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
