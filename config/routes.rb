@@ -4,4 +4,6 @@ Rails.application.routes.draw do
       resources :posts, only: %i[index create update]
     end
   end
+
+  root to: 'home#index'
 end

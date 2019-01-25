@@ -1,13 +1,13 @@
 class Api::V1::PostsController < ApplicationController
   def index
-    @post = Post.all
+    @posts = Post.all
   end
 
   def create
     @post = Post.new(post_params)
     @post.save!
 
-    render :show, status: :created
+    render :show, status: :created, formats: :json, handlers: :jbuilder
   end
 
   def update
@@ -15,7 +15,7 @@ class Api::V1::PostsController < ApplicationController
     @post.sympathy += 1
     @post.save!
 
-    render :show, status: :ok
+    render :show, status: :ok, formats: :json, handlers: :jbuilder
   end
 
   private
