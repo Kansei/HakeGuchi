@@ -10,11 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_14_214259) do
+ActiveRecord::Schema.define(version: 2019_01_22_224834) do
 
-  create_table "tasks", force: :cascade do |t|
-    t.string "name", null: false
-    t.boolean "is_done", default: false, null: false
+  create_table "delayed_jobs", force: :cascade do |t|
+    t.integer "priority", default: 0, null: false
+    t.integer "attempts", default: 0, null: false
+    t.text "handler", null: false
+    t.text "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string "locked_by"
+    t.string "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["priority", "run_at"], name: "delayed_jobs_priority"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "text", null: false
+    t.integer "sympathy", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
