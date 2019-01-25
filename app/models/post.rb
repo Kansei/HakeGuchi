@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
 
   def self.delete_expired
-    expiration_min = 30
+    expiration_min = 5
     deadline = Time.now - expiration_min*60
 
     expired_posts = Post.where("created_at < ?", deadline)
